@@ -1,0 +1,234 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    cursor: pointer;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #24252a;
+}
+.nav-container{
+    width: 1280px;
+    margin: auto;
+}
+.nav-checbox{
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    align-items: center;
+    padding: 20px 0; /*canbair el tamano de haader*/
+}
+.logo{
+    text-decoration: none;
+    color:#fff;
+    padding-left: 10px;
+}
+
+.tab-nav{
+    outline: none;
+    display: none;
+} 
+
+.tab-nav-label{
+    display: none;
+    color: #fff;
+}
+.tab-content{
+    grid-column: 3;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tab-content li{
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.tab-content li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    font-size: 18px; /*tamano de letra*/
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.tab-content li a::before{
+    display: block;
+    content: '';
+    height: 3px;
+    background: rgb(207, 12, 12);/*color */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    transform-origin: left;
+    transform: scale(0,1);
+    transition: transform ease-in-out 500ms;
+}
+.tab-content li a:hover::before{
+    transform: scale(1,1);
+
+}
+.tab-content li a::after{
+    content: '';
+    display: block;
+    height: 3px;
+    background: rgb(207, 12, 12);/*color */
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    transform-origin: right;
+    transform: scale(0,1);
+    transition: transform ease-in-out 500ms  ;
+}
+
+.tab-content li a:hover::after{
+    transform: scale(1,1);
+}
+
+
+.conten{
+    height: 120vh;
+    background-image: url('../img/background-01-1920x1280.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+
+.conten-slider{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+.conten-slider h1{
+    font-size: 100px;
+    color: #b71c1c;
+    padding-bottom: 30px;
+    text-align: center;
+    
+}
+
+.conten-slider p{
+    font-size: 25px;
+    color: #fff;
+    padding-bottom: 30px;
+    text-align: center;
+    line-height: 1.6;
+    
+}
+
+.btm-btm-slider{
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: #b71c1c;
+    padding: 25px 20px 25px 20px;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 1280px){
+        .nav-container{
+            width: 100%;
+        }
+}
+
+@media screen and (max-width: 1000px){
+    .tab-nav-label{
+        display: grid;
+        cursor: pointer;
+        grid-column: 3;
+        padding-right: 10px;
+    }
+
+    .tab-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column: 1/4;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: all ease-in-out 0.4s;
+        -o-transition: all ease-in-out 0.4s;
+        -webkit-transition: all ease-in-out 0.4s;
+    }
+    .nav-checbox  input:checked ~ .tab-content{
+        max-height: 400px;
+
+    }
+    .tab-content li{
+        padding: 10px 0;
+    }
+
+    .conten-slider h1 {
+        font-size: 65px;
+        color: #b71c1c;
+        padding-bottom: 30px;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 400px){
+    .conten-slider h1 {
+        font-size: 50px;
+    }
+
+    .conten-slider p {
+        font-size: 20px;
+    }
+    .btm-btm-slider {
+        width: 200px;
+    }
+
+}
+
+@media screen and (max-width: 350px){
+    .btm-btm-slider {
+        width: 180px;
+    }
+
+    .conten-slider p {
+        font-size: 18px;
+    }
+
+    .conten-slider h1 {
+        font-size: 45px;
+    }
+    
+}
+@media screen and (max-width: 300px){
+    .btm-btm-slider {
+        width: 180px;
+    }
+
+    .conten-slider p {
+        font-size: 15px;
+    }
+
+    .conten-slider h1 {
+        font-size: 40px;
+    }
+    
+}
